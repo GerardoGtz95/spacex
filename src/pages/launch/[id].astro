@@ -1,9 +1,9 @@
 ---
-import type { GetStaticPaths } from 'astro';
+// import type { GetStaticPaths } from 'astro';
 import Layout from '../../layouts/Layout.astro';
-import { getLatestLaunches, getLaunchBy } from '../../services/spacex';
+import { getLaunchBy } from '../../services/spacex';
 
-// export const prerender = false;
+export const prerender = false;
 
 const { id } = Astro.params;
 
@@ -16,13 +16,13 @@ if (id) {
  * Esta manera es correcta cuando hay un numero finito y conocido de elementos
  * No es correcto para paginas dinamicas
  */
-export const getStaticPaths = (async () => {
-  const launches = await getLatestLaunches();
+// export const getStaticPaths = (async () => {
+//   const launches = await getLatestLaunches();
 
-  return launches.map((launch) => ({
-    params: { id: launch.id },
-  }));
-}) satisfies GetStaticPaths;
+//   return launches.map((launch) => ({
+//     params: { id: launch.id },
+//   }));
+// }) satisfies GetStaticPaths;
 ---
 
 <Layout title=`Launch: ${launch?.id}`>

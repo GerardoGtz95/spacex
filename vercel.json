@@ -13,7 +13,7 @@
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/src/pages/launch/$1"
+      "dest": "/src/pages/$1"
     }
   ]
 }
